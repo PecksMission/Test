@@ -391,7 +391,7 @@ function updatePreview(journeyStructure) {
   
   <!-- Timeline -->
   <section class="timeline">
-    {% for entry in journey.timeline_entries %}
+    {% raw %}{% for entry in journey.timeline_entries %}
     <div class="entry type-{{ entry.type }}">
       <time>{{ entry.date }}</time>
       <h3>{{ entry.title }}</h3>
@@ -401,18 +401,18 @@ function updatePreview(journeyStructure) {
         {% for media in entry.media %}
           {% if media.type == 'image' %}
           <img src="{{ media.url }}" alt="{{ media.caption }}" />
-          {% elif media.type == 'video' %}
+          {% elsif media.type == 'video' %}
           <video controls><source src="{{ media.url }}"></video>
           {% endif %}
         {% endfor %}
       </div>
       {% endif %}
     </div>
-    {% endfor %}
+    {% endfor %}{% endraw %}
   </section>
   
   <!-- Diagrams Section -->
-  {% if journey.diagrams %}
+  {% raw %}{% if journey.diagrams %}
   <section class="diagrams">
     <h2>Procedure Overview</h2>
     {% for diagram in journey.diagrams %}
@@ -422,7 +422,7 @@ function updatePreview(journeyStructure) {
     </div>
     {% endfor %}
   </section>
-  {% endif %}
+  {% endif %}{% endraw %}
   
   <!-- Gallery -->
   {% if journey.gallery_photos %}
