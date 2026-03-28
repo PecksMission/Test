@@ -2,40 +2,29 @@
 
 title: Surgery Day Builder
 description: AI-powered healthcare journey timeline creator
+url: https://pecksmission.github.io
+baseurl: /TEST
+
+# Theme
 theme: jekyll-theme-minimal
 
-# GitHub Pages settings
-github:
-  is_project_page: true
-  repository_url: https://github.com/pecksmission/surgery-day-builder
-
-# Markdown
+# Build settings
 markdown: kramdown
 highlighter: rouge
 
-# Exclude files from site build
+# Exclude files from build
 exclude:
-  - venv/
-  - env/
+  - venv
+  - env
   - .env
-  - *.pyc
-  - __pycache__/
-  - .pytest_cache/
-  - node_modules/
+  - "*.pyc"
+  - __pycache__
+  - .pytest_cache
+  - node_modules
   - Gemfile
   - Gemfile.lock
+  - "*.egg-info"
 
 # Include files
 include:
   - .htaccess
-
-# Build settings
-plugins:
-  - jekyll-seo-tag
-  - jekyll-feed
-
-# Collections (if needed)
-collections:
-  docs:
-    output: true
-    permalink: /:collection/:path/
